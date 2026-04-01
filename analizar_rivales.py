@@ -1,9 +1,12 @@
+def orden_optimo(rivales)
+    return rivales.sort(key=lambda rival: int(rival[1]), reverse=True)
+    
 def tiempo_minimo(rivales):
-    rivales.sort(key=lambda rival: int(rival[1]), reverse=True)
+    orden = orden_optimo(rivales)
 
     tiempo_scaloni = 0
 
-    for tiempos in rivales:
+    for tiempos in orden:
         Si = int(tiempos[0])
         Ai = int(tiempos[1])
 
