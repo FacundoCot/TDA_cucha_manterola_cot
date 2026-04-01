@@ -1,4 +1,4 @@
-def orden_optimo(rivales)
+def orden_optimo(rivales):
     return rivales.sort(key=lambda rival: int(rival[1]), reverse=True)
     
 def tiempo_minimo(rivales):
