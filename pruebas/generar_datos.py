@@ -1,13 +1,15 @@
 import random 
+import numpy as np
 
-SEED = 1234
+
+SEED = 12345
 INICIO = 1
-FIN = 10000
-
+FIN = 100000
+random.seed(SEED)
 
 def generar_datos(n):
 
-    random.seed(SEED )
+    
     tiempos = [(random.randint(INICIO, FIN), random.randint(INICIO,FIN)) for _ in range(n)]
     
     return (tiempos,)

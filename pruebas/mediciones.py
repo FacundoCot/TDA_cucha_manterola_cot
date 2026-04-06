@@ -2,7 +2,7 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 import time 
 import os
 
-
+CANTIDAD_EJECUCUCIONES = 10
 
 
 def tiempo_en_correr(algoritmo, *argumentos):
@@ -17,7 +17,7 @@ def tiempo_algoritmo(algoritmo, tamaños, generar_datos):
 
     with ProcessPoolExecutor(max(1, (os.cpu_count() or 0) //4)) as p:
         for i in tamaños:
-            for _ in range(10):
+            for _ in range(CANTIDAD_EJECUCUCIONES):
                 futures[p.submit(tiempo_en_correr, algoritmo,*generar_datos(i))] = i
 
         for f in as_completed(futures):
